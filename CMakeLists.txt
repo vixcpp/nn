@@ -12,7 +12,7 @@ option(VIX_AI_NN_WARNINGS    "Enable extra warnings" ON)
 
 # ---- Header-only library ---------------------------------------------------
 add_library(vix_ai_nn INTERFACE)
-add_library(Vix::AI::nn ALIAS vix_ai_nn)
+add_library(vix::ai::nn ALIAS vix_ai_nn)
 
 target_include_directories(vix_ai_nn INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -54,7 +54,7 @@ if(VIX_AI_NN_INSTALL)
 
   install(EXPORT vix_ai_nnTargets
           FILE vix_ai_nnTargets.cmake
-          NAMESPACE Vix::AI::
+          NAMESPACE vix::ai::
           DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/vix_ai/nn)
 
   write_basic_package_version_file(
